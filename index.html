@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumYum - Naget Tahu Bihun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #ff5722;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .menu {
+            position: relative;
+        }
+        .menu-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+        .dropdown a:hover {
+            background-color: #ff5722;
+            color: white;
+        }
+        .menu:hover .dropdown {
+            display: block;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 5px 0;
+        }
+        .price {
+            font-size: 1.5rem;
+            color: #28a745;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+            document.getElementById(page).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>YumYum</h1>
+        <div class="menu">
+            <button class="menu-button">&#9776;</button>
+            <div class="dropdown">
+                <a href="#" onclick="showPage('home')">Halaman Utama</a>
+                <a href="#" onclick="showPage('product')">Produk</a>
+                <a href="#" onclick="showPage('contact')">Kontak Kami</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="home" class="container page">
+        <h2>Selamat Datang di YumYum!</h2>
+        <p>Kami menghadirkan camilan lezat dan praktis untuk Anda, yaitu Naget Tahu Bihun. Cocok dinikmati kapan saja!</p>
+        <img src="https://via.placeholder.com/800x400" alt="Naget Tahu Bihun" class="product-image">
+    </div>
+
+    <div id="product" class="container page hidden">
+        <h2>Produk Kami</h2>
+        <img src="https://drive.google.com/uc?export=view&id=1vvOE-z49DunrKf9mn9zaGddjimkruLxf" 
+             alt="Naget Tahu Bihun" class="product-image">
+        <h3>Harga</h3>
+        <p class="price">Rp 2.000 per potong</p>
+        <h3>Komposisi</h3>
+        <ul>
+            <li>Tahu</li>
+            <li>Bihun</li>
+            <li>Cabai rawit</li>
+            <li>Tepung terigu</li>
+            <li>Tepung panir</li>
+            <li>Telur ayam</li>
+            <li>Wortel</li>
+        </ul>
+    </div>
+
+    <div id="contact" class="container page hidden">
+        <h2>Kontak Kami</h2>
+        <p>Instagram: <a href="https://www.instagram.com/naget_tahu_bihun" target="_blank">@naget_tahu_bihun</a></p>
+        <p>WhatsApp: <a href="https://wa.me/08123456789" target="_blank">08123456789</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 YumYum. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>
